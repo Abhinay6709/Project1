@@ -4,7 +4,7 @@ name: hello world
   pull_request:
 jobs:
   hello:
-    runs-on: [self-hosted, linux, x64, gpu]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -13,6 +13,22 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 17
+
+      - name: install_libgbm
+        run: |
+          sudo apt-get install libgbm1 -y
+      - name: install_libxkbcommon
+        run: |
+          sudo apt-get install libxkbcommon-x11-0 -y
+      - name: Set up Chrome
+        uses: browser-actions/setup-chrome@latest
+        with:
+            chrome-version: stable
+
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@v4.4
+        with:
+            maven-version: 3.8.2
 
       - name: Build and Test with Maven
         run: mvn clean install
