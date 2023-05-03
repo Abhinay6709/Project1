@@ -7,11 +7,7 @@
     </listeners>
     <test verbose="2" name="C:/Users/ABTELU/Documents/Eclipse Workspace/Project1/src/main/java/Tests/MyTests.java">
         <classes>
-            <class name="Tests.MyTests">
-                <methods>
-                    <include name="verifyTest"/>
-                    <include name="verifyFalseTest"/>
-                </methods>
+            <class name="Tests.Test">
             </class>
         </classes>
     </test>
