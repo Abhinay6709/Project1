@@ -13,6 +13,11 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 17
+
       - name: Build and Test with Maven
-        run: mvn test
+        run: mvn clean install
         continue-on-error: false
+
+      - name: Run Automation Test suite
+        run: mvn clean test
+        continue-on-error: true
