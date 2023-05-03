@@ -15,7 +15,7 @@ jobs:
       - name: Build and Test with Maven
           env:
             GITHUB_USERNAME: Abhinay6709
-            GITHUB_TOKEN:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           run: mvn test
           continue-on-error: false
 
