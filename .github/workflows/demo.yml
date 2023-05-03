@@ -1,11 +1,9 @@
 name: hello world
-on:
-  push:
-  pull_request:
-
+'on':
+  push: null
+  pull_request: null
 jobs:
-  hello:
+  hello: null
   runs-on: ubuntu-latest
-
 steps:
   - run: echo "hello world"
