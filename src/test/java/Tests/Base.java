@@ -12,9 +12,11 @@ public class Base {
 
     public WebDriver intialize_driver(){
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\ABTELU\\Documents\\chromedriver_win32 (3)\\chromedriver.exe");
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
         driver.manage().window().maximize();
-       tdriver.set(driver);
+        tdriver.set(driver);
         return getDriver();
     }
 
