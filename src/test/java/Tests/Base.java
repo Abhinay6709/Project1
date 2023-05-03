@@ -1,5 +1,6 @@
 package Tests;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -11,8 +12,8 @@ public class Base {
     public static ThreadLocal<WebDriver> tdriver = new ThreadLocal<>();
 
     public WebDriver intialize_driver(){
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\ABTELU\\Documents\\chromedriver_win32 (3)\\chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
+        WebDriverManager.chromedriver().setup();
+         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.manage().window().maximize();
