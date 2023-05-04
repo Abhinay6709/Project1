@@ -38,7 +38,4 @@ jobs:
         run: mvn clean test
         continue-on-error: true
 
-      - run: echo hi > world.txt
-      - uses: actions/upload-artifact@v3
-        with:
-          path: world.txt
+
