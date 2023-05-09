@@ -1,12 +1,12 @@
 package Pages;
 
-import Tests.Base;
+import com.demo.Base.MyBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends Base {
+public class HomePage extends MyBase {
     WebDriver driver;
     @FindBy(id="username")
     WebElement element;
